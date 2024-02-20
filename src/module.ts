@@ -84,6 +84,12 @@ export default defineNuxtModule<ModuleOptions>({
         resolver.resolve('./runtime/server/api/register.get'),
     })
     addServerHandler({
+      route: '/api/health',
+      handler:
+        options.handlers?.health ||
+        resolver.resolve('./runtime/server/api/health.get'),
+    })
+    addServerHandler({
       route: '/api/logout',
       handler:
         options.handlers?.logout ||
